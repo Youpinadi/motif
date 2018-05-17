@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
 import random from 'lodash.random';
+import randomColor from 'randomcolor';
 import './App.css';
 
 const CANVAS_SIZE = window.innerHeight;
 const SPRING_PARAM = { stiffness: 60, damping: 9 };
 
-const CentralShape = ({ size }) => {
+const CentralShape = ({ size, color }) => {
   const center = (CANVAS_SIZE - size) / 2;
 
   return (
@@ -23,7 +24,8 @@ const CentralShape = ({ size }) => {
         <div
           className="shape"
           style={{
-            ...interpolatingStyle
+            ...interpolatingStyle,
+            backgroundColor: color
           }}
         />
       )}
@@ -37,7 +39,8 @@ const Hiders = ({
   offsetRotation,
   nbHiders,
   hiderSize,
-  hiderBorderRadius
+  hiderBorderRadius,
+  hiderBorderRadius2
 }) => {
   const rotateStep = 360 / nbHiders;
   const center = (CANVAS_SIZE - hiderSize) / 2;
@@ -90,12 +93,15 @@ class App extends Component {
 
   randomize = () => {
     this.setState({
-      shapeSize: random(150, 500)
+      shapeSize: random(400, 500),
+      shapeColor: randomColor({
+        luminosity: 'bright'
+      })
     });
   };
 
   render() {
-    const { shapeSize } = this.state;
+    const { shapeSize, shapeColor } = this.state;
 
     return (
       <div className="App">
@@ -111,7 +117,8 @@ class App extends Component {
             offset={shapeSize / 2}
             offsetRotation={random(100)}
             nbHiders={random(10, 15)}
-            hiderBorderRadius={random(50)}
+            hiderBorderRadius={random(shapeSize / 3) + 10}
+            hiderBorderRadius2={random(shapeSize / 3) + 10}
             hiderSize={random(shapeSize / 3) + 10}
           />
           <Hiders
@@ -120,9 +127,10 @@ class App extends Component {
             offsetRotation={random(100)}
             nbHiders={random(5, 10)}
             hiderBorderRadius={random(50)}
+            hiderBorderRadius2={random(50)}
             hiderSize={random(shapeSize / 10) + 5}
           />
-          <CentralShape size={shapeSize} />
+          <CentralShape size={shapeSize} color={shapeColor} />
         </div>
       </div>
     );
