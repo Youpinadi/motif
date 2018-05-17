@@ -4,6 +4,7 @@
     "private": true,
     "homepage": "http://youpinadi.github.io/motif",
     "dependencies": {
+        "lodash.random": "^3.2.0",
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
         "react-motion": "^0.5.2",
