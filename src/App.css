@@ -29,7 +29,7 @@ body {
   transform-origin: center center;
 }
 
-.container:hover .hider {
+.shape:hover .hider {
   background-color: rgba(55, 55, 55, 0.6);
 }
 

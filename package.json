@@ -8,6 +8,7 @@
         "randomcolor": "^0.5.3",
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
+        "react-fns": "^1.4.0",
         "react-motion": "^0.5.2",
         "react-scripts": "1.1.4"
     },
