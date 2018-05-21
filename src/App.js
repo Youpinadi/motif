@@ -131,7 +131,7 @@ class App extends Component {
     const tileWidth = width / cols;
     const tileHeight = height / rows;
 
-    const shapeSize = Math.max(tileWidth, tileHeight) - 200;
+    const shapeSize = Math.min(tileWidth, tileHeight) - 50;
     const { shapeColor } = this.state;
 
     let cogs = [];
