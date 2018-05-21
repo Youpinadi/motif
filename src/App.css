@@ -29,9 +29,9 @@ body {
   transform-origin: center center;
 }
 
-.shape:hover .hider {
+/* .shape:hover .hider {
   background-color: rgba(55, 55, 55, 0.6);
-}
+} */
 
 @keyframes App-logo-spin {
   from {
