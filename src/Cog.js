@@ -14,6 +14,7 @@ class Cog extends Component {
       })
     };
   }
+
   reload = () => {
     this.setState({
       color: randomColor({
@@ -23,7 +24,7 @@ class Cog extends Component {
   };
 
   render() {
-    const { x, y, size, reload } = this.props;
+    const { x, y, size } = this.props;
     const { color } = this.state;
 
     return (

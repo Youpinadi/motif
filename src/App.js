@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import randomColor from 'randomcolor';
 import { WindowSize } from 'react-fns';
 
 import Cog from './Cog';
