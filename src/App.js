@@ -7,25 +7,6 @@ import Cog from './Cog';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shapeSize: 300
-    };
-  }
-
-  componentDidMount() {
-    setInterval(this.randomize, 2000);
-  }
-
-  randomize = () => {
-    this.setState({
-      shapeColor: randomColor({
-        luminosity: 'bright'
-      })
-    });
-  };
-
   renderCogs(width, height) {
     const cols = 3;
     const rows = 2;
@@ -40,17 +21,7 @@ class App extends Component {
         const x = i * tileWidth;
         const y = j * tileHeight;
 
-        cogs.push(
-          <Cog
-            x={x}
-            y={y}
-            onClick={this.randomize}
-            size={shapeSize}
-            color={randomColor({
-              luminosity: 'bright'
-            })}
-          />
-        );
+        cogs.push(<Cog x={x} y={y} size={shapeSize} />);
       }
     }
     return cogs;
