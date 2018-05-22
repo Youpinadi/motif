@@ -44,6 +44,7 @@ class App extends Component {
           <Cog
             x={x}
             y={y}
+            onClick={this.randomize}
             size={shapeSize}
             color={randomColor({
               luminosity: 'bright'

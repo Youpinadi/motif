@@ -3,7 +3,7 @@ import { Motion, spring } from 'react-motion';
 
 const SPRING_PARAM = { stiffness: 60, damping: 9 };
 const Hiders = ({
-  shapeSize,
+  size,
   offset,
   offsetRotation,
   nbHiders,
@@ -12,8 +12,8 @@ const Hiders = ({
   hiderBorderRadius2
 }) => {
   const rotateStep = 360 / nbHiders;
-  const centerX = (shapeSize - hiderSize) / 2;
-  const centerY = (shapeSize - hiderSize) / 2;
+  const centerX = (size - hiderSize) / 2;
+  const centerY = (size - hiderSize) / 2;
 
   return Array(nbHiders)
     .fill()

@@ -7,7 +7,7 @@ import Hiders from './Hiders';
 const Cog = ({ x, y, size, color }) => (
   <CentralShape x={x} y={y} size={size} color={color}>
     <Hiders
-      shapeSize={size}
+      size={size}
       offset={size / 2}
       offsetRotation={random(100)}
       nbHiders={random(10, 15)}
@@ -16,7 +16,7 @@ const Cog = ({ x, y, size, color }) => (
       hiderSize={random(size / 3) + 10}
     />
     <Hiders
-      shapeSize={size}
+      size={size}
       offset={size / 4}
       offsetRotation={random(100)}
       nbHiders={random(5, 10)}
